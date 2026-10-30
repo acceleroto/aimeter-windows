@@ -1,0 +1,11 @@
+<Project>
+  <!-- Keep build output out of Dropbox. -->
+  <PropertyGroup>
+    <AIMeterBuildRoot>$(LOCALAPPDATA)\AIMeterWin\build\$(MSBuildProjectName)\</AIMeterBuildRoot>
+    <BaseOutputPath>$(AIMeterBuildRoot)bin\</BaseOutputPath>
+    <BaseIntermediateOutputPath>$(AIMeterBuildRoot)obj\</BaseIntermediateOutputPath>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+</Project>

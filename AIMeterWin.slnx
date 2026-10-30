@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/AIMeter.App/AIMeter.App.csproj" />
+    <Project Path="src/AIMeter.Core/AIMeter.Core.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/AIMeter.Tests/AIMeter.Tests.csproj" />
+  </Folder>
+</Solution>

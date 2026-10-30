@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <!-- WinForms only for the tray icon (NotifyIcon). -->
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <!-- LibraryImport-generated interop code. -->
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <!-- DPI awareness is set in app.manifest for WPF; this WinForms hint doesn't apply. -->
+    <NoWarn>$(NoWarn);WFO0003</NoWarn>
+    <AssemblyName>AIMeter</AssemblyName>
+    <RootNamespace>AIMeter.App</RootNamespace>
+    <Product>AIMeter</Product>
+    <Version>0.1.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Avoid WPF/WinForms name clashes (Application, Button, ...). -->
+    <Using Remove="System.Windows.Forms" />
+    <Using Remove="System.Drawing" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2903.40" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AIMeter.Core\AIMeter.Core.csproj" />
+  </ItemGroup>
+
+</Project>
