@@ -124,7 +124,7 @@ public sealed class ProviderWeb
         Parse = (m, now) => UsageParsers.ParseCodex(m.GetProperty("usage"), now),
     };
 
-    public static readonly IReadOnlyList<ProviderWeb> All = [Claude, Cursor, Codex];
+    public static readonly IReadOnlyList<ProviderWeb> All = [Claude, Codex, Cursor];
 
     public static ProviderWeb For(ProviderId id) => All.First(p => p.Id == id);
 }

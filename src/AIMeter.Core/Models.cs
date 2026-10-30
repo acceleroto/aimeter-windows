@@ -1,10 +1,11 @@
 namespace AIMeter.Core;
 
+/// <summary>Declaration order is display order (overlay, tray menu, settings).</summary>
 public enum ProviderId
 {
     Claude,
-    Cursor,
     Codex,
+    Cursor,
 }
 
 /// <summary>One usage limit, e.g. Claude's 5-hour window or Cursor's billing period.</summary>
