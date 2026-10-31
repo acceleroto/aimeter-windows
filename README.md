@@ -7,7 +7,9 @@ hides while a fullscreen app or game is running.
 
 This is the Windows companion to [AIMeter for macOS](https://github.com/acceleroto/aimeter).
 
-<!-- TODO: screenshot of the overlay (docs/overlay.png) -->
+<p align="center">
+  <img src="screenshots/AI-Meter-Windows-screenshot01.png" alt="AIMeter overlay: Claude at 28%, Codex at 28%, Cursor at 100% in red">
+</p>
 
 > **Unofficial.** AIMeter is not affiliated with Anthropic, OpenAI or Anysphere.
 > It reads the same usage pages you see when you're signed in to each site. If a
