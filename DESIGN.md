@@ -110,7 +110,6 @@ dependency). Velopack for install + updates via GitHub Releases. Windows only.
 - `src/AIMeter.Core` — models, JSON parsers, gauge/state rules (no UI; tested)
 - `src/AIMeter.App` — overlay, tray, settings, sign-in windows, background fetch
 - `tests/AIMeter.Tests` — parser and state tests with made-up fixtures
-- `spike/` — the original WebView2 capture test; not part of the app
 
 Background refresh creates an offscreen WebView2 per provider, one at a time,
 and closes it afterwards, so no browser processes stay running between

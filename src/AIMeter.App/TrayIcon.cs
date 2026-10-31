@@ -12,14 +12,16 @@ namespace AIMeter.App;
 public sealed class TrayIcon : IDisposable
 {
     private readonly AppController _app;
+    private readonly Updater _updater;
     private readonly NotifyIcon _icon;
     private readonly ContextMenuStrip _menu = new();
 
     public event Action? QuitRequested;
 
-    public TrayIcon(AppController app)
+    public TrayIcon(AppController app, Updater updater)
     {
         _app = app;
+        _updater = updater;
         _icon = new NotifyIcon
         {
             Icon = DrawIcon(),
@@ -79,6 +81,8 @@ public sealed class TrayIcon : IDisposable
         _menu.Items.Add(_app.MoveMode ? "Done moving" : "Move overlay…", null, (_, _) => _app.MoveMode = !_app.MoveMode);
         _menu.Items.Add("Settings…", null, (_, _) => _app.ShowSettings());
         _menu.Items.Add(new ToolStripSeparator());
+        if (_updater.ReadyVersion is { } version)
+            _menu.Items.Add($"Restart to update to {version}", null, (_, _) => _updater.InstallNow());
         _menu.Items.Add("Quit AIMeter", null, (_, _) => QuitRequested?.Invoke());
     }
 

@@ -15,6 +15,9 @@
     <RootNamespace>AIMeter.App</RootNamespace>
     <Product>AIMeter</Product>
     <Version>0.1.0</Version>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <!-- Program.Main runs Velopack's install/update hooks before WPF starts. -->
+    <StartupObject>AIMeter.App.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,6 +28,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2903.40" />
+    <PackageReference Include="Velopack" Version="1.2.161" />
   </ItemGroup>
 
   <ItemGroup>

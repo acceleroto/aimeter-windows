@@ -8,6 +8,7 @@ public partial class App : Application
     private Mutex? _singleInstance;
     private AppController? _controller;
     private TrayIcon? _tray;
+    private Updater? _updater;
 
     protected override void OnStartup(StartupEventArgs e)
     {
@@ -29,13 +30,16 @@ public partial class App : Application
 
         Log.Info($"starting AIMeter {typeof(App).Assembly.GetName().Version}");
         _controller = new AppController();
-        _tray = new TrayIcon(_controller);
+        _updater = new Updater();
+        _tray = new TrayIcon(_controller, _updater);
         _tray.QuitRequested += Quit;
         _controller.Start();
+        _updater.Start();
     }
 
     private void Quit()
     {
+        _updater?.InstallOnExit();
         _tray?.Dispose();
         _controller?.Stop();
         Shutdown();
